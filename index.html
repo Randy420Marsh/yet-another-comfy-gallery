@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+    <header>
+        <h1>Local Image Gallery</h1>
+        <p>A showcase of images from your local folders.</p>
+    </header>
+
+    <main id="gallery-container">
+        <h2 id="gallery-title">Gallery Content</h2>
+        <div id="images-grid" class="image-grid">
+            </div>
+    </main>
+
+    <footer>
+        <p>- Comfy Image Gallery -</p>
+    </footer>
+
+    <div id="lightbox-modal" class="modal closed" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button id="modal-close-btn" class="close-btn" aria-label="Close Modal">&times;</button>
+        <div class="modal-content" id="modal-content-wrapper">
+            <button id="modal-prev-btn" class="nav-btn left-btn" aria-label="Previous Image">&lt;</button>
+            
+            <figure class="modal-image-figure">
+                <img id="modal-image" class="lazy-load" alt="Full Size Gallery Image">
+                <figcaption id="modal-caption" class="modal-caption"></figcaption>
+            </figure>
+            
+            <button id="modal-play-btn" class="nav-btn play-btn" aria-label="Play Slideshow">▶</button>
+            
+            <button id="modal-next-btn" class="nav-btn right-btn" aria-label="Next Image">&gt;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
