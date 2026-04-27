@@ -1,5 +1,7 @@
 # yet-another-comfy-gallery
 
+![Project Preview](gallery.png)
+
 A lightweight, beautiful local image gallery built specifically for ComfyUI users.
 
 Browse, zoom, and showcase your AI-generated images with zero hassle — no extra ComfyUI nodes, no cloud, no dependencies beyond Python.
