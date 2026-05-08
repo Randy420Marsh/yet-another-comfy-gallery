@@ -98,7 +98,7 @@ body, html {
     <div id="welcomeZone" onclick="document.getElementById('fileInput').click()">
         <div style="font-size: 4rem; margin-bottom: 1rem;">🖼️</div>
         <h2 style="margin:0;">Drop AI Image Here</h2>
-        <p style="color: var(--text-muted);">PNG · JPEG · WebP (ComfyUI / A1111 / Automatic1111)</p>
+        <p style="color: var(--text-muted);">PNG · JPEG · WebP (ComfyUI / Automatic1111)</p>
         <button class="btn-ui" style="margin-top: 1rem; font-size: 0.9rem; padding: 10px 20px;">Load Image</button>
     </div>
     <input type="file" id="fileInput" hidden accept="image/*">
@@ -392,7 +392,7 @@ function extractTextFallback(buffer) {
         .decode(new Uint8Array(buffer, 0, maxBytes)); // FIX: view, not copy
     const meta = {};
 
-    // A1111 / Automatic1111 parameters block
+    // Automatic1111 parameters block
     const a111 = str.match(/parameters[\x00-\x08]*([\s\S]{30,7000}?Steps:\s*\d+)/i);
     if (a111) meta.parameters = a111[1].replace(/\0/g, '').trim();
 
@@ -458,7 +458,7 @@ function processMetadata(chunks) {
         }
 
     } else if (chunks.parameters) {
-        res.source = 'A1111 / Automatic1111';
+        res.source = 'Automatic1111';
         const p = chunks.parameters;
         const negIdx   = p.indexOf('Negative prompt:');
         const stepsIdx = p.lastIndexOf('Steps:');

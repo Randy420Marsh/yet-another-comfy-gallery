@@ -422,7 +422,7 @@ function extractTextFallback(buffer) {
         .decode(new Uint8Array(buffer, 0, maxBytes)); // FIX: view, not copy
     const meta = {};
 
-    // A1111 / Automatic1111 parameters block
+    // Automatic1111 parameters block
     const a111 = str.match(/parameters[\x00-\x08]*([\s\S]{30,7000}?Steps:\s*\d+)/i);
     if (a111) meta.parameters = a111[1].replace(/\0/g, '').trim();
 
@@ -488,7 +488,7 @@ function processMetadata(chunks) {
         }
 
     } else if (chunks.parameters) {
-        res.source = 'A1111 / Automatic1111';
+        res.source = 'Automatic1111';
         const p = chunks.parameters;
         const negIdx   = p.indexOf('Negative prompt:');
         const stepsIdx = p.lastIndexOf('Steps:');
